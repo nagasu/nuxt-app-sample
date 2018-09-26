@@ -5,9 +5,7 @@
       <h1 class="title">
         nuxt-app-sample
       </h1>
-      <h2 class="subtitle">
-        My geometric Nuxt.js projecta
-      </h2>
+      <h2 class="red">by {{ name }}</h2>
       <hello/>
       <div>
         <nuxt-link to="/users">go to users</nuxt-link>
@@ -24,6 +22,11 @@ export default {
   components: {
     Logo,
     Hello
+  },
+  data() {
+    return {
+      name: 'Nagasu'
+    }
   }
 }
 </script>
