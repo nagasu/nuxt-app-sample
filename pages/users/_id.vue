@@ -1,29 +1,27 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
       <h1 class="title">
-        nuxt-app-sample
+        /users/1
       </h1>
-      <h2 class="subtitle">
-        My geometric Nuxt.js projecta
+      <h2>
+        {{ name }}
       </h2>
-      <hello/>
-      <div>
-        <nuxt-link to="/users">go to users</nuxt-link>
-      </div>
+      <nuxt-link to="/users">go to users/index</nuxt-link>
     </div>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import Hello from '~/components/Hello.vue'
-
 export default {
-  components: {
-    Logo,
-    Hello
+  validate({ params }) {
+    // 数値でなければならない
+    return /^\d+$/.test(params.id)
+  },
+  asyncData(context) {
+    return {
+      name: 'Nagasu!!'
+    }
   }
 }
 </script>

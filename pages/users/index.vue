@@ -1,28 +1,23 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
       <h1 class="title">
-        nuxt-app-sample
+        /users
       </h1>
-      <h2 class="subtitle">
-        My geometric Nuxt.js projecta
-      </h2>
-      <hello/>
+      <nuxt-link to="/users/1">go to users/1</nuxt-link>
+      <nuxt-link to="/users/nagasu">go to users/nagasu</nuxt-link>
       <div>
-        <nuxt-link to="/users">go to users</nuxt-link>
+        <nuxt-link to="/">go to top</nuxt-link>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 import Hello from '~/components/Hello.vue'
 
 export default {
   components: {
-    Logo,
     Hello
   }
 }
