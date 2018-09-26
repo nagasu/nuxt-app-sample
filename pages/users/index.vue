@@ -4,23 +4,27 @@
       <h1 class="title">
         /users
       </h1>
-      <nuxt-link to="/users/1">go to users/1</nuxt-link>
-      <nuxt-link to="/users/nagasu">go to users/nagasu</nuxt-link>
-      <div>
-        <nuxt-link to="/">go to top</nuxt-link>
-      </div>
+      <div><nuxt-link to="/users/1">go to users/1</nuxt-link></div>
+      <div><nuxt-link to="/users/nagasu">go to users/nagasu</nuxt-link></div>
+      <div><nuxt-link to="/">go to top</nuxt-link></div>
+      <div><hello /></div>
+      <div><item name="satoshi" /></div>
     </div>
   </section>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import Hello from '~/components/Hello.vue'
+import Item from '~/components/Item.vue'
 
-export default {
+@Component({
   components: {
-    Hello
+    Hello,
+    Item
   }
-}
+})
+export default class extends Vue {}
 </script>
 
 <style>
